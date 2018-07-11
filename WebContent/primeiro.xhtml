@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+	<ui:composition template="/estrutura.xhtml">
+	
+	<h1> Meu Primeiro exemplo JSF</h1>
+	
+	Sabe o que quer dizer?
+	
+	<h:outputText value ="#{MeuPrimeiroBean.ola}" rendered="#{MeuPrimeiroBean.exibir}" escape = "false"/>
+	<h:form>
+	Marque se  quiser que a mensagem do bean apareça
+	<h:selectBooleanCheckbox value="#{meuPrimeiroBean.exibir}" /><br/>
+	
+	
+	commandLink
+	<h:commandButton value="Enviar"/><br/>
+	
+	
+	
+	outputLink
+	<h:outputLink value= "http://pedro.tuxcuiabano.com" >Melhor site</h:outputLink><br/>
+	
+	link
+	<h:link outcome= "cadastroPessoas.jsf" value="Chamando cadastro de Pessoas"/>
+	
+	
+	
+	</h:form>
+	</ui:composition>
+</html>
