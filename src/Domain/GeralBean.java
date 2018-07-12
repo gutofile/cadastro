@@ -33,7 +33,8 @@ public class GeralBean {
 	}
 	
 	public void atualizarLocale(ActionEvent e) {
-		
+		Locale l = (Locale) e.getComponent().getAttributes().get("locale");
+		locale = l;
 		
 		FacesContext.getCurrentInstance().getViewRoot().setLocale(locale);
 	}

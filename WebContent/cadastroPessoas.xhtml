@@ -3,12 +3,19 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
-	
+
+<ui:composition template="/estrutura.xhtml">
+<ui:define name="direita"><h:messages infoClass="info" errorClass="errado" warnClass="aviso" fatalClass="fatal"/></ui:define>	
+<ui:param name="titulo" value="Cadastro de Pessoas" />
+
 <h:head>
+
+<style>
+	@import url("resources/css/estilo.css");</style>
+	
 	<f:loadBundle var="mens" basename="bundles.mensagens"/>
 		
-	<h:graphicImage name="ifmtlogo.png" library="imagens" />
-	
+		
 	<title>Cadastro de Pessoas</title>
 	
 	<h:outputStylesheet library = "css" name = "estilo.css" />
@@ -20,6 +27,14 @@
 <h:body>
 
 	<h1>Cadastro de Pessoas</h1>
+	
+	<h:form>
+		<ui:repeat var="l" value="#{geralBean.localesDisponiveis}">
+			<h:commandButton image="bandeiras/#{l}.gif" actionListener="#geralBean.atualizarLocale">
+			<f:attribute name="locale" value="#{l}"/>
+			</h:commandButton>
+		</ui:repeat>
+	</h:form>
 	
 	<h:form>
 		<h:panelGrid column="3">
@@ -170,5 +185,5 @@
 </h:body>
 
 
-
+</ui:composition>
 </html>

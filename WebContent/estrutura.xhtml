@@ -7,8 +7,8 @@
 	<h:head>
 		<style>
 		@import url("resources/css/estilo.css");</style>
-		<title><ui:insert name="titulo">Titulo que será modificado</ui:insert></title>
-	</h:head>
+		<title>#{titulo}</title>
+		</h:head>
 	<h:body>
 		<div id="topo">
 			<h:graphicImage name="ifmtlogo.png" library="imagens" />
@@ -19,10 +19,10 @@
 			<ui:include src="/menu.xhtml"/>
 			Area da esquerda
 		</div>
-		
+		</div>
 		<div id="direita"><ui:insert name="direita">O que vem ao lado direito</ui:insert></div>
 		<div id="centro"><ui:insert>O que vem no centro</ui:insert> </div>
-		</div>
+		
 		<div id="rodape">
 			<strong>IFMT - Campus Cuiabá</strong>
 		</div>
